@@ -22,6 +22,7 @@ def before_scenario(context, scenario):
 
 def after_scenario(context, scenario):
     print("after scenario")
+    context.driver.quit()
 
 def after_feature(context, feature):
     print("\nAfter Feature")
@@ -47,7 +48,7 @@ def BrowserSetUp(context):
     context.driver.implicitly_wait(10)
 
     yield context.driver
-    context.driver.quit()
+    
 
 @fixture
 def GenerateEvidence(context, scenario):

@@ -102,6 +102,22 @@ class WebBrowser():
         except:
             self.log.info("Could not select element: " + element)
             print_stack()
+    
+    def select_element_by_index(self, element, index=0):
+        """Seleciona o elemento em um menu do tipo select pelo atributo texto    
+        
+        @param locator_type(str): tipo de locator usado na busca
+        @param locator(str): identificador do elemento
+        @param text(str)
+        """
+        try:
+            element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(By.XPATH(element)))
+            select = Select(element)
+            select.select_by_index(index)
+            self.log.info("Selected element from menu: " + element)
+        except:
+            self.log.info("Could not select element: " + element)
+            print_stack()
 
     def is_element_present(self, element):
         """Verifica se o elemento está presente. Retorna true caso esteja

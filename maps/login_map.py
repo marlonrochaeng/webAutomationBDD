@@ -9,3 +9,5 @@ class LoginMap:
     logout_button = "//i[@class='icon-2x icon-signout']"
     login_message = "//div[@id='flash']"
     select_login = "//a[@href='/login']"
+    dropdown_link = "//a[@href='/dropdown']"
+    dropdown_select = "//select[@id='dropdown']"

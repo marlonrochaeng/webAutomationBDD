@@ -5,6 +5,8 @@ from pages.login_page import LoginPage
 def step_impl_goto_page(context, page):
     login_page = LoginPage(context)
     login_page.select_from_menu(page)
+    import time
+    time.sleep(2)
 
 @when(u'I do the valid login with credentials "{username}" and "{password}"')
 def step_impl_valid_login(context, username, password):

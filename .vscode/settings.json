@@ -1,0 +1,10 @@
+{
+    "name": "Python: Behave current file",
+    "type": "python",
+    "request": "launch",
+    "module": "behave",
+    "console": "integratedTerminal",
+    "args": [
+        "-D","browser=chrome","${file}"
+    ]
+}
