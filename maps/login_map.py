@@ -11,3 +11,6 @@ class LoginMap:
     select_login = "//a[@href='/login']"
     dropdown_link = "//a[@href='/dropdown']"
     dropdown_select = "//select[@id='dropdown']"
+    alerts_link = "//a[@href='/javascript_alerts']"
+    first_alert = "//button[contains(text(),'Click for JS Alert')]"
+    second_alert = "//button[contains(text(),'Click for JS Confirm')]"
