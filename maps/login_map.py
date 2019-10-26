@@ -14,3 +14,7 @@ class LoginMap:
     alerts_link = "//a[@href='/javascript_alerts']"
     first_alert = "//button[contains(text(),'Click for JS Alert')]"
     second_alert = "//button[contains(text(),'Click for JS Confirm')]"
+    download_select = "//a[@href='/download']"
+
+    def file_to_download(self, text):
+        return "//a[@href='download/"+text+"']"

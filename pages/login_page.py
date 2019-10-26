@@ -25,6 +25,8 @@ class LoginPage(WebBrowser):
             self.click_on(self.login_map.dropdown_link)
         elif safe_str_cmp(menu_option, "Alerts"):
             self.click_on(self.login_map.alerts_link)
+        elif safe_str_cmp(menu_option, "Download"):
+            self.click_on(self.login_map.download_select)
 
     def is_logged(self):
         message = self.wait_element(self.login_map.login_message, timeout=50)
@@ -42,3 +44,7 @@ class LoginPage(WebBrowser):
 
     def click_on_second_alert(self):
         self.click_on(self.login_map.second_alert)
+    
+    def download_file(self, text):
+        self.click_on(self.login_map.file_to_download(text))
+        print("----File Downloaded----")

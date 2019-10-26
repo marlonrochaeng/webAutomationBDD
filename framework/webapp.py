@@ -111,11 +111,13 @@ class WebBrowser():
             print_stack()
 
     def select_element_by_index(self, element, index=0):
-        """Seleciona o elemento em um menu do tipo select pelo atributo texto    
-
-        @param locator_type(str): tipo de locator usado na busca
-        @param locator(str): identificador do elemento
-        @param text(str)
+        """select element passing index argument
+        
+        Arguments:
+            element {[webelement]}
+        
+        Keyword Arguments:
+            index {int} (default: {0})
         """
         try:
             element = WebDriverWait(self.driver, 10).until(
