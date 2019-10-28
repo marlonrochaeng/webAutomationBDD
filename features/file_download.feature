@@ -7,5 +7,5 @@ Feature: Download
 
 
         Examples:
-            | url                                | download  |
-            | https://the-internet.herokuapp.com | Giza.conf |
+            | url                                | download      |
+            | https://the-internet.herokuapp.com | some-file.txt |

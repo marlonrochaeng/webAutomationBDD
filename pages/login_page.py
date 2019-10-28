@@ -44,7 +44,7 @@ class LoginPage(WebBrowser):
 
     def click_on_second_alert(self):
         self.click_on(self.login_map.second_alert)
-    
+
     def download_file(self, text):
         self.click_on(self.login_map.file_to_download(text))
         print("----File Downloaded----")
