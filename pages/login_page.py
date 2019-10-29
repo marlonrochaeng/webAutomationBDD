@@ -47,4 +47,4 @@ class LoginPage(WebBrowser):
 
     def download_file(self, text):
         self.click_on(self.login_map.file_to_download(text))
-        print("----File Downloaded----")
+        time.sleep(0.5)
