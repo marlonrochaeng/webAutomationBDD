@@ -8,6 +8,6 @@
         "-D","browser=chrome","${file}"
     ],
     "python.linting.pylintEnabled": false,
-    "python.linting.enabled": false,
+    "python.linting.enabled": true,
     "python.linting.flake8Enabled": true
 }
