@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class LoginMap:
     # locators
-    login_field = "//input[@id='username']"
+    login_field = "//input[@id='username']a"
     password_field = "//input[@id='password']"
     login_button = "//i[contains(text(),'Login')]"
     logout_button = "//i[@class='icon-2x icon-signout']"

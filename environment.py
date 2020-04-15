@@ -32,10 +32,12 @@ def after_scenario(context, scenario):
 
 def after_feature(context, feature):
     print("\nAfter Feature")
+    
 
 
 def after_all(context):
-    print("After scenario")
+    print("After test suite")
+    
 
 
 @fixture
@@ -52,13 +54,13 @@ def BrowserSetUp(context):
         print("Tests will be executed on Chrome")
         options = ChromeOptions()
         options.add_experimental_option("prefs", {
-            "download.default_directory": "C:\\Users\\malencar\\Documents\\MeusProjetos\\PythonAutomationBDD\\temp",
+            #"download.default_directory": "/Users/marlon/Documents/Meus Projetos/webAutomationBDD/temp",
             "download.prompt_for_download": False,
             "download.directory_upgrade": True,
             "safebrowsing.enabled": False
         })
         context.driver = webdriver.Chrome(os.path.join(
-            "framework", "chromedriver.exe"), chrome_options=options)
+            "framework", "chromedriver"), chrome_options=options)
     context.driver.maximize_window()
     context.driver.implicitly_wait(10)
 

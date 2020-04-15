@@ -11,7 +11,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
-
 import utilities.custom_logger as cl
 from test_config.config import config
 
@@ -36,7 +35,8 @@ class WebBrowser():
             self.log.info("Element found in get element... "+element)
         except:
             el = None
-            self.log.info("Element not found in get element...")
+            self.log.error("Element not found in get element...")
+            raise
         return el
 
     def wait_element(self, element, timeout=10):
@@ -54,11 +54,9 @@ class WebBrowser():
             )
             print("---------------------------------------\n")
             print("el:", element)
-        except ElementNotFoundException:
+        except:
             self.log.error("Element was not found in wait element...")
-            raise
-        except TimeoutException:
-            self.log.error("Element was not found in wait element...")
+            self.driver.quit()
             raise
 
         return element
@@ -75,6 +73,8 @@ class WebBrowser():
             self.log.info("Clicked on : ", element)
         except (ElementNotClickableException, ElementNotFoundException):
             print_stack()
+            self.log.error("Could not click on: ", element)
+            self.driver.quit()
             raise
 
     def send_keys(self, element, text=""):
@@ -91,6 +91,7 @@ class WebBrowser():
         except ElementNotFoundException:
             self.log.error("Could not send keys to element: ", element)
             print_stack()
+            self.driver.quit()
             raise
 
     def select_element_by_text(self, element, text=""):

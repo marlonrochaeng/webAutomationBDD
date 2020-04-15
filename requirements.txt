@@ -1,0 +1,5 @@
+pytest
+behave
+python-docx
+selenium
+werkzeug
